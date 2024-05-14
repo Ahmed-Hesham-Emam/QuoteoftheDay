@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+
+    <title>Quotes App</title>
+    <!--------------------------- Fonts----------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Jaro:opsz@6..72&display=swap"
+      rel="stylesheet"
+    />
+    <!--------------------------- Fonts----------------------->
+    <link rel="stylesheet" type="text/css" href="CSS/all.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <h1 class="py-5 fs-1 text-center">Quote of the Day</h1>
+      <h2 class="h2 pb-5 text-center text-light">
+        Press the button below to recieve a random quote
+      </h2>
+    </div>
+
+    <div
+      class="container-fluid w-50 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="row randcontet">
+        <div class="col-12">
+          <div>
+            <p class="py-2 text-center fs-3 fw-semibold" id="quote"></p>
+
+            <p id="auther" class="pb-3 fs-5 fw-bold"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row randbtn">
+        <div class="col-12">
+          <div class="text-center">
+            <button class="btn shadow-lg" onclick="getQuote()">
+              Get quote
+              <i class="ps-2 fa-brands fa-searchengin"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
