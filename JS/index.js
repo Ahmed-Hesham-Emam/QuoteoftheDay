@@ -48,31 +48,26 @@ quotes = [
     quote: `“Manners maketh man.”`,
     auther: `―  William of Wykeham`,
   },
-
-  {
-    quote: `“Manners maketh man.”`,
-    auther: `―  William of Wykeham`,
-  },
 ];
 
 usedNumbers = [];
 
-function RNG() {
-  var randomNumber = Math.floor(Math.random() * quotes.length);
-
-  if (usedNumbers.length == quotes.length) {
-    usedNumbers.splice(0, quotes.length);
-  }
-
-  if (usedNumbers.includes(randomNumber)) {
-    return RNG();
-  } else {
-    usedNumbers.push(randomNumber);
-    return randomNumber;
-  }
-}
-
 function getQuote() {
+  function RNG() {
+    var randomNumber = Math.floor(Math.random() * quotes.length);
+
+    if (usedNumbers.length == quotes.length) {
+      usedNumbers.splice(0, quotes.length);
+    }
+
+    if (usedNumbers.includes(randomNumber)) {
+      return RNG();
+    } else {
+      usedNumbers.push(randomNumber);
+      return randomNumber;
+    }
+  }
+
   var randomNumber = RNG();
   document.getElementById("quote").innerHTML = quotes[randomNumber].quote;
   document.getElementById("auther").innerHTML = quotes[randomNumber].auther;
