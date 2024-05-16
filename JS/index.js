@@ -52,22 +52,22 @@ quotes = [
 
 usedNumbers = [];
 
-function getQuote() {
-  function RNG() {
-    var randomNumber = Math.floor(Math.random() * quotes.length);
+function RNG() {
+  var randomNumber = Math.floor(Math.random() * quotes.length);
 
-    if (usedNumbers.length == quotes.length) {
-      usedNumbers.splice(0, quotes.length);
-    }
-
-    if (usedNumbers.includes(randomNumber)) {
-      return RNG();
-    } else {
-      usedNumbers.push(randomNumber);
-      return randomNumber;
-    }
+  if (usedNumbers.length == quotes.length) {
+    usedNumbers.splice(0, quotes.length);
   }
 
+  if (usedNumbers.includes(randomNumber)) {
+    return RNG();
+  } else {
+    usedNumbers.push(randomNumber);
+    return randomNumber;
+  }
+}
+
+function getQuote() {
   var randomNumber = RNG();
   document.getElementById("quote").innerHTML = quotes[randomNumber].quote;
   document.getElementById("auther").innerHTML = quotes[randomNumber].auther;
